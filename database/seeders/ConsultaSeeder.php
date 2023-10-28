@@ -22,6 +22,7 @@ class ConsultaSeeder extends Seeder
                 'animal_id'=>$faker->numberBetween($min = 1, $max = 5),
                 'tipo'=>$faker->randomElement($array = array ('Exame','Consulta','Cirurgia')),
                 'descricao'=>$faker->streetName,
+                'colaborador_id'=>$faker->numberBetween($min = 1, $max = 10),
             ]);
         }
     }

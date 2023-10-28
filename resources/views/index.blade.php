@@ -111,6 +111,30 @@
                     src="https://blog-static.petlove.com.br/wp-content/uploads/2019/08/gato-vet.jpg?_gl=1*11g8rt3*_gcl_au*MTE4NTU5OTEzMy4xNjkzNzY3MzUz&_ga=2.142944630.212871342.1693767353-459837882.1693767353" />
                 </div>
             </div>
+            <div class="flex w-1/3 flex-wrap">
+                <div class="w-full p-1 md:p-2">
+                <img
+                    alt="gallery"
+                    class="block h-full w-full rounded-lg object-cover object-center"
+                    src="https://vetus.com.br/universidade/wp-content/uploads/2015/03/estoque-02.jpg" />
+                </div>
+            </div>
+            <div class="flex w-1/3 flex-wrap">
+                <div class="w-full p-1 md:p-2">
+                <img
+                    alt="gallery"
+                    class="block h-full w-full rounded-lg object-cover object-center"
+                    src="https://pr1.nicelocal.br.com/JyTmctq1-5mwK4Wjc6yGUA/2250x1500,q75/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2YlPOVRWSDXWXY-YfSfnHZOiFKwpw4F0Tf6ynWMelKEKv6GW3bLFZamUsb5bL8NLeQ" />
+                </div>
+            </div>
+            <div class="flex w-1/3 flex-wrap">
+                <div class="w-full p-1 md:p-2">
+                <img
+                    alt="gallery"
+                    class="block h-full w-full rounded-lg object-cover object-center"
+                    src="https://pr1.nicelocal.br.com/_yXrHW3yFQlQxjpNP4qwTg/2243x1500,q75/4px-BW84_n0QJGVPszge3NRBsKw-2VcOifrJIjPYFYkOtaCZxxXQ2UGoa78wUvTfxxSHY7D-241P8TEaPjt5OwONjyvSavOSgz8_pD95tYOSIsFIbnj_4g" />
+                </div>
+            </div>
         </div>
       </div><br><br>
 

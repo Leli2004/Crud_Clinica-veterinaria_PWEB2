@@ -16,14 +16,16 @@ class Animal extends Model
         'porte',
         'raca',
         'tutor_id',
+        'imagem',
     ];
 
     protected $casts = [
-        "tutor_id"=>"integer"
+        "'tutor_id',"=>"integer"
     ];
 
     public function tutor(){
-        return $this->belongsTo(Tutor::class,
-            'tutor_id', 'id');
+        // 1-N
+        return $this->hasMany(Tutor::class,
+        'tutor_id', 'id');
     }
 }

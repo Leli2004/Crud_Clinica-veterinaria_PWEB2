@@ -11,18 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('animal', function (Blueprint $table) {
+        Schema::create('colaborador', function (Blueprint $table) {
             $table->id();
-            $table->string('nome',100);
-            $table->string('peso',8);
-            $table->string('porte',7);
-            $table->string('raca',20);
-            $table->foreignId('tutor_id')->nullable()
-            ->constrained('tutor')->default(null)->onDelete('cascade');
+            $table->string('nome',120);
+            $table->string('cpf',14);
+            $table->string('telefone',15);
+            $table->string('cargo',50);
             $table->string('imagem',150)->nullable();
             $table->timestamps();
         });
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('animal');
+        Schema::dropIfExists('colaborador');
     }
 };

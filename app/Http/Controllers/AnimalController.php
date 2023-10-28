@@ -6,6 +6,7 @@ use App\Models\Animal;
 use App\Models\Tutor;
 use Illuminate\Http\Request;
 
+
 class AnimalController extends Controller
 {
     /**
@@ -54,10 +55,23 @@ class AnimalController extends Controller
                 'tutor_id'=>$request->tutor_id,
             ];
 
-            Animal::create($dados); //ou  $request->all()
+            $imagem = $request->file('imagem');
+            //verifica se existe imagem no formulário
+            if($imagem){
+            $nome_arquivo =
+            date('YmdHis').'.'.$imagem->getClientOriginalExtension();
 
+            $diretorio = "imagem/animal/";
+            //salva imagem em uma pasta do sistema
+            $imagem->storeAs($diretorio,$nome_arquivo,'public');
+
+            $dados['imagem'] = $diretorio.$nome_arquivo;
+            }
+
+            Animal::create($dados);
+            
             return redirect('animal')->with('success', "Cadastrado com sucesso!");
-        }
+    }
 
         /**
          * Carrega apenas 1 registro da tabela
@@ -107,6 +121,19 @@ class AnimalController extends Controller
                 'tutor_id'=>$request->tutor_id,
             ];
 
+            $imagem = $request->file('imagem');
+            //verifica se existe imagem no formulário
+            if($imagem){
+                $nome_arquivo =
+                date('YmdHis').'.'.$imagem->getClientOriginalExtension();
+
+                $diretorio = "imagem/animal/";
+                //salva imagem em uma pasta do sistema
+                $imagem->storeAs($diretorio,$nome_arquivo,'public');
+
+                $dados['imagem'] = $diretorio.$nome_arquivo;
+            }
+
             Animal::UpdateOrCreate(
                 ['id'=>$request->id],
                 $dados);
@@ -139,6 +166,21 @@ class AnimalController extends Controller
 
             return view('animal.list')->with(['animais'=> $animais]);
         }
+
+        public function report(){
+            $animais = Animal::orderBy('nome')->get();
+
+            $data = [
+                'title'=>"Relatorio Listagem de animais",
+                'animais'=> $animais
+            ];
+
+            $pdf = PDF::loadView('animal.report',$data);
+
+            return $pdf->download("listagem_animais.pdf");
+        }
+
+
     }
 
 

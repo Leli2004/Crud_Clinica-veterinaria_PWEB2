@@ -10,6 +10,9 @@
         <a href="{{route('index')}}" class="hover:text-blue-600">Home</a>
         <a href="{{ route('tutor.index') }}" class="hover:text-blue-600">Tutores</a>
         <a href="{{ route('animal.index') }}" class="hover:text-blue-600">Animais</a>
+        <a href="{{ route('colaborador.index') }}" class="hover:text-blue-600">Colaboradores</a>
+        <a href="{{ route('fornecedor.index') }}" class="hover:text-blue-600">Fornecedores</a>
+        <a href="{{ route('produto.index') }}" class="hover:text-blue-600">Produtos</a>
         <a href="{{ route('consulta.index') }}" class="hover:text-blue-600">Consultas e Procedimentos</a>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">

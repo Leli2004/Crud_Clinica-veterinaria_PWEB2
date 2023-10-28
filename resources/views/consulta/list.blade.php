@@ -40,7 +40,7 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div><br>
 
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -63,7 +63,7 @@
                   <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-200 dark:border-neutral-500 dark:hover:bg-neutral-600">
                     <td class="whitespace-nowrap px-6 py-4 font-medium">{{$item->id}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->animal->nome ?? ""}}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{$item->data}}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{$item->data}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->hora}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->tipo}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->descricao}}</td>
