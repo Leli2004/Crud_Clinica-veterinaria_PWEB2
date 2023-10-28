@@ -66,7 +66,7 @@
                         width="130px" alt="imagem do produto"></td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->nome}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->tipo}}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{$item->fornecedor_id ?? ""}}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{$item->fornecedor_id}}</td> <!-- Não dá certo se manter $item->fornecedor->nome ?? '' -->
                     <td class="whitespace-nowrap px-6 py-4">
                         <a href="{{route('produto.edit', $item->id)}}">
                             <button

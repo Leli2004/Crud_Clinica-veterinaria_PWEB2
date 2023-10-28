@@ -72,7 +72,7 @@
                     <td class="whitespace-nowrap px-6 py-4">{{$item->peso}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->porte}}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{$item->raca}}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{$item->tutor_id }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{$item->tutor_id}}</td> <!-- Não dá certo se manter $item->tutor->nome ?? '' -->
                     <td class="whitespace-nowrap px-6 py-4">
                         <a href="{{route('animal.edit', $item->id)}}">
                             <button

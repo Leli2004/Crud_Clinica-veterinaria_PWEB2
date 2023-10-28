@@ -24,6 +24,7 @@ class AnimalController extends Controller
          */
         public function create()
         {
+
             $tutores = Tutor::orderBy('nome')->get();
 
             return view('animal.form')->with(['tutores'=> $tutores]);
@@ -55,23 +56,10 @@ class AnimalController extends Controller
                 'tutor_id'=>$request->tutor_id,
             ];
 
-            $imagem = $request->file('imagem');
-            //verifica se existe imagem no formulário
-            if($imagem){
-            $nome_arquivo =
-            date('YmdHis').'.'.$imagem->getClientOriginalExtension();
+            Animal::create($dados); //ou  $request->all()
 
-            $diretorio = "imagem/animal/";
-            //salva imagem em uma pasta do sistema
-            $imagem->storeAs($diretorio,$nome_arquivo,'public');
-
-            $dados['imagem'] = $diretorio.$nome_arquivo;
-            }
-
-            Animal::create($dados);
-            
             return redirect('animal')->with('success', "Cadastrado com sucesso!");
-    }
+        }
 
         /**
          * Carrega apenas 1 registro da tabela
@@ -86,8 +74,7 @@ class AnimalController extends Controller
          */
         public function edit($id)
         {
-            $animal = Animal::find($id); // select * from animal where id = $id
-            // dois pontos (::) indica que find é um método estático, não necessita instanciar
+            $animal = Animal::find($id); 
 
             $tutores = Tutor::orderBy('nome')->get();
 
@@ -121,19 +108,6 @@ class AnimalController extends Controller
                 'tutor_id'=>$request->tutor_id,
             ];
 
-            $imagem = $request->file('imagem');
-            //verifica se existe imagem no formulário
-            if($imagem){
-                $nome_arquivo =
-                date('YmdHis').'.'.$imagem->getClientOriginalExtension();
-
-                $diretorio = "imagem/animal/";
-                //salva imagem em uma pasta do sistema
-                $imagem->storeAs($diretorio,$nome_arquivo,'public');
-
-                $dados['imagem'] = $diretorio.$nome_arquivo;
-            }
-
             Animal::UpdateOrCreate(
                 ['id'=>$request->id],
                 $dados);
@@ -166,21 +140,6 @@ class AnimalController extends Controller
 
             return view('animal.list')->with(['animais'=> $animais]);
         }
-
-        public function report(){
-            $animais = Animal::orderBy('nome')->get();
-
-            $data = [
-                'title'=>"Relatorio Listagem de animais",
-                'animais'=> $animais
-            ];
-
-            $pdf = PDF::loadView('animal.report',$data);
-
-            return $pdf->download("listagem_animais.pdf");
-        }
-
-
     }
 
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\RelacionamentoController;
 
 Route::get('/',
     [MainController::class, 'index'])->name('index');
@@ -82,3 +83,7 @@ Route::get('/produto/chart',
 
 Route::get('/produto/destroy/{id}',
     [ProdutoController::class, 'destroy'])->name('produto.destroy');
+
+
+Route::get('/relacionamento',
+    [RelacionamentoController::class, 'index'])->name('relacionamento');

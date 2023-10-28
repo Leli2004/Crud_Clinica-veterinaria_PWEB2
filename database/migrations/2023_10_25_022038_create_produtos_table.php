@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome',120);
             $table->string('tipo',120);
             $table->foreignId('fornecedor_id')->nullable()
-            ->constrained('fornecedor')->default(null)->onDelete('cascade');
+                ->constrained('fornecedor')->default(null)->onDelete('cascade');
             $table->string('imagem',150)->nullable();
             $table->timestamps();
         });

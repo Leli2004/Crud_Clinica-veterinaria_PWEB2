@@ -20,7 +20,7 @@ class Animal extends Model
     ];
 
     protected $casts = [
-        "'tutor_id',"=>"integer"
+        "tutor_id"=>"integer"
     ];
 
     public function tutor(){
@@ -28,4 +28,5 @@ class Animal extends Model
         return $this->hasMany(Tutor::class,
         'tutor_id', 'id');
     }
+
 }
